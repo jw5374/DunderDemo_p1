@@ -3,7 +3,7 @@
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Alegreya Sans', sans-serif;
     background-color: lightslategray;
     margin: 0;
     padding: 0;
@@ -30,13 +30,20 @@ main {
     text-align: center;
 }
 
+form {
+    margin-block: 0.5em;
+}
+
 button {
     width: max-content;
+    height: max-content;
 }
 
 #func-holder {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
     justify-content: space-around;
     margin-bottom: 2em;
 }
@@ -56,11 +63,18 @@ button {
     border-radius: 1em;
     margin-inline: 1em;
     margin-block: 0.5em;
+    transition: 500ms ease-in-out;
+    box-shadow: -3px 3px 5px black;
+}
+
+.object-element:hover {
+    transform: translate3d(1rem, -0.5rem , 0.5rem) scale(110%);
+    box-shadow: -30px 30px 30px black;
 }
 
 .object-header {
     text-align: left;
-    border: 2px solid black;
+    border: 0.75px solid black;
     border-top-left-radius: 1em;
     border-top-right-radius: 1em;
     box-shadow: 0 4px 4px #0c5368;

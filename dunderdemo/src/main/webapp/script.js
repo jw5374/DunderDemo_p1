@@ -1,6 +1,8 @@
 const path = '/DunderDemo'
 const getallbut = document.getElementById("get-all-button")
 const getoneform = document.getElementById("get-one-form")
+const deleteForm = document.getElementById("delete-form")
+const insertForm = document.getElementById("insert-form")
 const objectHolder = document.getElementById("object-holder")
 
 function clearAllEl(el) {
@@ -38,6 +40,9 @@ getallbut.addEventListener('click', () => {
     }).then((res) => {
         return res.json();
     }).then((data) => {
+        if(!data) {
+            return;
+        }
         clearAllEl(objectHolder)
         for(let d of data) {
             objectHolder.appendChild(createObjectEl(d))
@@ -52,7 +57,36 @@ getoneform.addEventListener('submit', (e) => {
     }).then((res) => {
         return res.json()
     }).then((data) => {
+        if(!data) {
+            return;
+        }
         clearAllEl(objectHolder)
         objectHolder.appendChild(createObjectEl(data));
+    })
+})
+
+deleteForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    fetch(path + '/deleteone?id=' + deleteForm.idinput.value, {
+        method: "DELETE"
+    }).then(() =>{
+        getallbut.click()
+    })
+})
+
+insertForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    fetch(path + '/insertone', {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            name: insertForm.name.value,
+            email: insertForm.email.value,
+            balance: parseFloat(insertForm.balance.value)
+        })
+    }).then(() =>{
+        getallbut.click()
     })
 })
