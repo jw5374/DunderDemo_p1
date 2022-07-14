@@ -19,9 +19,9 @@
 	</servlet-mapping> -->
 
 
-	<error-page>
+	<!-- <error-page>
 		<error-code>404</error-code>
 		<location>/error.html</location>
-	</error-page>
+	</error-page> -->
 
 </web-app>

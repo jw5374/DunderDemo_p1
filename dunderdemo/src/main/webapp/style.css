@@ -5,11 +5,75 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
     background-color: lightslategray;
+    margin: 0;
+    padding: 0;
 }
 
 header {
     text-align: center;
-    height: max-content;
+    height: 4em;
     box-shadow: 1px 1px 3px black;
+    background-color: rgb(9, 28, 83);
+    color: #137a99;
+    text-shadow: -1px 1px 4px #0c5368;
+    margin-bottom: 0.75em;
+    padding: 0.5em;
+    border-radius: 0 0 1em 1em;
 }
 
+h1 {
+    margin: 0;
+}
+
+main {
+    min-height: 100vh;
+    text-align: center;
+}
+
+button {
+    width: max-content;
+}
+
+#func-holder {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-bottom: 2em;
+}
+
+#object-holder {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.object-element {
+    width: max-content;
+    min-height: 10em;
+    background: linear-gradient(to bottom right, #094153, #1B0953);
+    color: white;
+    text-shadow: 0 0 3px black;
+    border-radius: 1em;
+    margin-inline: 1em;
+    margin-block: 0.5em;
+}
+
+.object-header {
+    text-align: left;
+    border: 2px solid black;
+    border-top-left-radius: 1em;
+    border-top-right-radius: 1em;
+    box-shadow: 0 4px 4px #0c5368;
+    margin: 0;
+    padding: 0.5em 0.5em;
+}
+
+.object-body {
+    padding: 0.5em;
+}
+
+.object-body p {
+    text-align: left;
+    font-size: smaller;
+    margin-block: 0.5em;
+}

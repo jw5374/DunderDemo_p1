@@ -11,7 +11,17 @@
 <body>
     <header><h1>DunderDemo</h1></header>
     <main>
-        <button id="testbutton">TryGet</button>
+        <section id="func-holder">
+            <button id="get-all-button">Get All</button>
+            <form id="get-one-form" action="getone" method="GET">
+                <input name="idinput" type="text">
+                <input type="submit" value="Get By Primary Key">
+            </form>
+        </section>
+        <section>
+            <div id="object-holder">
+            </div>
+        </section>        
     </main>
 </body>
 </html>
