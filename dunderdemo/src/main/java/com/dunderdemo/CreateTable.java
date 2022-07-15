@@ -17,14 +17,14 @@ public class CreateTable
             ses.createTable(Demo3.class);
             
     // this class has no @Table annotation and will throw IllegalStateException
-            ses.createTable(NoTable.class); 
+            // ses.createTable(NoTable.class); 
 
     // this class has a String marked with a 'serial' constraint and will throw a SerialMmismatchException
-            ses.createTable(SerialString.class); 
+            // ses.createTable(SerialString.class); 
 
     // this class has a field marked by @Column that is of an unknown type and will throw an UnexpectedTypeException
-            ses.createTable(UnknownTypeSQL.class); 
-            
+            // ses.createTable(UnknownTypeSQL.class); 
+
         } catch(IllegalStateException e) {
             System.out.println(e.getMessage());
         } catch(SerialMismatchException e) {

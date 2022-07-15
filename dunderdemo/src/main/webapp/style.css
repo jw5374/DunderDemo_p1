@@ -26,7 +26,6 @@ h1 {
 }
 
 main {
-    min-height: 100vh;
     text-align: center;
 }
 
@@ -54,22 +53,46 @@ button {
     justify-content: center;
 }
 
+.update-form-style {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    z-index: 1;
+    inset-block: 6em;
+    inset-inline: 15em;
+    background-color: #094053f5;
+}
+
+.update-form-style > * {
+    width: max-content;
+}
+
 .object-element {
     width: max-content;
     min-height: 10em;
+    padding-bottom: 0.25em;
     background: linear-gradient(to bottom right, #094153, #1B0953);
     color: white;
     text-shadow: 0 0 3px black;
     border-radius: 1em;
     margin-inline: 1em;
     margin-block: 0.5em;
-    transition: 500ms ease-in-out;
+    transition: 250ms ease-in-out;
     box-shadow: -3px 3px 5px black;
 }
 
 .object-element:hover {
     transform: translate3d(1rem, -0.5rem , 0.5rem) scale(110%);
     box-shadow: -30px 30px 30px black;
+    cursor: pointer;
+}
+
+.object-element:active {
+    transform: translate3d(0.75rem, -0.3rem , 0.3rem) scale(105%);
+    box-shadow: -25px 25px 25px black;
+    cursor: pointer;
 }
 
 .object-header {
@@ -90,4 +113,20 @@ button {
     text-align: left;
     font-size: smaller;
     margin-block: 0.5em;
+}
+
+.hide {
+    display: none;
+}
+
+@keyframes fadescalein {
+    0% {
+        opacity: 0;
+        transform: scale(95%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(100%);
+    }
 }
